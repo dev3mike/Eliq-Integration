@@ -72,35 +72,5 @@ namespace Controllers
 
             return Ok(gameInsertDto);
         }
-
-        [HttpPut("{Id}")]
-        public async Task<ActionResult<TeamInsertDTO>> update(int Id, TeamInsertDTO teamInsertDTO)
-        {
-            var team = await context.Teams.FindAsync(Id);
-            if (team == null) return BadRequest("Team Does Not Exist");
-
-            team.Name = teamInsertDTO.Name;
-            await context.SaveChangesAsync();
-
-            return Ok(teamInsertDTO);
-        }
-
-        [HttpDelete("{Id}")]
-        public async Task<ActionResult<TeamInsertDTO>> delete(int Id)
-        {
-            var team = await context.Teams.FindAsync(Id);
-            if (team == null) return BadRequest("Team Does Not Exist");
-
-            context.Teams.Remove(team);
-            await context.SaveChangesAsync();
-
-            return Ok();
-        }
-
-
-        private async Task<bool> isTeamExist(string name)
-        {
-            return await context.Teams.AnyAsync(x => x.Name == name);
-        }
     }
 }

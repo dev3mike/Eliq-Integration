@@ -9,6 +9,7 @@ namespace Entities
         public string Name { get; set; }
         public DateTime Created { get; set; } = DateTime.Now;
         public ICollection<Game> Games { get; set; }
+        public ICollection<Player> Players { get; set; }
 
     }
 }

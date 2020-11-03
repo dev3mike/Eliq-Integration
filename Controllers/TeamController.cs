@@ -33,7 +33,8 @@ namespace Controllers
         public async Task<ActionResult<Team>> getASingleTeam(int Id)
         {
             return await context.Teams
-            .FindAsync(Id);
+            .Include(s => s.Players)
+            .FirstOrDefaultAsync(w => w.Id == Id);
         }
 
         [HttpPost]

@@ -10,6 +10,7 @@ namespace Helpers
         {
             CreateMap<TeamInsertDTO, Team>();
             CreateMap<GameInsertDTO, Game>();
+            CreateMap<PlayerInsertDTO, Player>();
         }
     }
 }
