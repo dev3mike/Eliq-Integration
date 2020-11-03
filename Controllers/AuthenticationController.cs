@@ -19,6 +19,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
+using NUnit.Framework;
 
 namespace Controllers
 {
@@ -57,8 +58,6 @@ namespace Controllers
             var name = User.FindFirst("fullName");
             return Ok("Hello " + name.Value + ", This is a response from Admin method");
         }
-
-
 
         private string GenerateJWTToken(string username, string fullname, string role = "Admin")
         {

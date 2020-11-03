@@ -44,7 +44,7 @@ namespace Controllers
             .Include(s => s.Team)
             .Include(s => s.GuestTeam)
             .AsNoTracking()
-            .ToListAsync(); ;
+            .ToListAsync();
         }
 
         [HttpPost]
