@@ -70,7 +70,7 @@ namespace EliqIntegrationApp
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "EliqIntegrationApp v1"));
             }
 
-            // app.ConfigureExceptionHandler();
+            app.ConfigureExceptionHandler();
 
             app.UseHttpsRedirection();
 
