@@ -26,7 +26,7 @@ namespace Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult<GameInsertDTO>> insert(PlayerInsertDTO playerInsertDTO)
+        public async Task<ActionResult<PlayerInsertDTO>> insert(PlayerInsertDTO playerInsertDTO)
         {
             // Find Host Team
             var team = await context.Teams.FindAsync(playerInsertDTO.TeamId);
