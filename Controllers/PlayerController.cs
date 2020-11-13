@@ -26,7 +26,7 @@ namespace Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult<PlayerInsertDTO>> insert(PlayerInsertDTO playerInsertDTO)
+        public async Task<ActionResult<PlayerInsertDTO>> Insert(PlayerInsertDTO playerInsertDTO)
         {
             // Find Host Team
             var team = await context.Teams.FindAsync(playerInsertDTO.TeamId);
@@ -50,7 +50,7 @@ namespace Controllers
         }
 
         [HttpDelete("{Id}")]
-        public async Task<ActionResult<string>> delete(int Id)
+        public async Task<ActionResult<string>> Delete(int Id)
         {
             var player = await context.Players.FindAsync(Id);
             if (player == null) return BadRequest("Player Does Not Exist");

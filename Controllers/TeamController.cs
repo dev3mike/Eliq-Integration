@@ -23,14 +23,14 @@ namespace Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Team>>> listOfTeams()
+        public async Task<ActionResult<IEnumerable<Team>>> ListOfTeams()
         {
             return await context.Teams
             .ToListAsync();
         }
 
         [HttpGet("{Id}")]
-        public async Task<ActionResult<Team>> getASingleTeam(int Id)
+        public async Task<ActionResult<Team>> GetASingleTeam(int Id)
         {
             return await context.Teams
             .Include(s => s.Players)
@@ -38,7 +38,7 @@ namespace Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult<TeamInsertDTO>> insert(TeamInsertDTO teamInsertDTO)
+        public async Task<ActionResult<TeamInsertDTO>> Insert(TeamInsertDTO teamInsertDTO)
         {
             // Check Existance
             if (await isTeamExist(teamInsertDTO.Name)) return BadRequest("Team Name Exists");

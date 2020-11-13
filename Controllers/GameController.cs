@@ -26,7 +26,7 @@ namespace Controllers
         }
 
         [HttpGet("{filter}")]
-        public async Task<ActionResult<IEnumerable<Game>>> listOfGames(string filter)
+        public async Task<ActionResult<IEnumerable<Game>>> ListOfGames(string filter)
         {
             var games = context.Games;
             // Filter Games [ upcoming , previous ]
@@ -48,7 +48,7 @@ namespace Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult<GameInsertDTO>> insert(GameInsertDTO gameInsertDto)
+        public async Task<ActionResult<GameInsertDTO>> Insert(GameInsertDTO gameInsertDto)
         {
             // Find Host Team
             var team = await context.Teams.FindAsync(gameInsertDto.TeamId);
